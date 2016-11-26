@@ -9,10 +9,13 @@ class Queue:
         self.queue.insert(0,val)
 
     def dequeue(self):
-        return self.queue.pop()
+        if self.is_empty():
+            return None
+        else:
+            return self.queue.pop()
 
     def size(self):
         return len(self.queue)
 
     def is_empty(self):
-        return self.size == 0
+        return self.size() == 0
